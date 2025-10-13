@@ -1,0 +1,33 @@
+#include <iostream>
+using namespace std;
+
+
+int main() {
+int numero, invertido = 0, resto;
+
+
+cout << "Ingrese un número entero positivo: ";
+cin >> numero;
+
+
+if (numero < 0) {
+cout << "Por favor, ingrese un número positivo." << endl;
+return 1;
+}
+
+
+int original = numero; // Guardar una copia para mostrarla al final
+
+
+while (numero > 0) {
+resto = numero % 10;
+invertido = invertido * 10 + resto;
+numero /= 10;
+}
+
+
+cout << "El número invertido de " << original << " es: " << invertido << endl;
+
+
+return 0;
+}
