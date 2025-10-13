@@ -1,0 +1,27 @@
+#include <iostream>
+#include <string>
+#include <algorithm> // Para la función reverse
+using namespace std;
+
+
+int main() {
+string texto;
+
+
+cout << "Ingrese una palabra o frase: ";
+getline(cin, texto);
+
+
+string textoInvertido = texto;
+reverse(textoInvertido.begin(), textoInvertido.end());
+
+
+if (texto == textoInvertido) {
+cout << "La palabra/frase \"" << texto << "\" es un palíndromo." << endl;
+} else {
+cout << "La palabra/frase \"" << texto << "\" no es un palíndromo." << endl;
+}
+
+
+return 0;
+}
