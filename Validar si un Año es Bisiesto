@@ -1,0 +1,25 @@
+#include <iostream>
+
+
+int main() {
+    int año;
+    
+    // 1. Pedir al usuario que ingrese un año
+    std::cout << "Ingresa un año: ";
+    std::cin >> año;
+    
+    // 2. Validar que el año sea positivo
+    if (año <= 0) {
+        std::cout << "Error: El año debe ser positivo." << std::endl;
+        return 1; // Salir del programa con error
+    }
+    
+    // 3. Aplicar las reglas del año bisiesto
+    if ((año % 4 == 0 && año % 100 != 0) || (año % 400 == 0)) {
+        std::cout << "El año " << año << " es bisiesto." << std::endl;
+    } else {
+        std::cout << "El año " << año << " no es bisiesto." << std::endl;
+    }
+    
+    return 0;
+}
