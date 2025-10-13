@@ -1,0 +1,27 @@
+#include <iostream>
+#include <iomanip>  // Para setprecision
+
+int main() {
+    double radio, area;
+    const double PI = 3.1416;  // Valor aproximado de π
+    
+    // 1. Pedir al usuario que ingrese el radio
+    std::cout << "Ingresa el radio del círculo: ";
+    std::cin >> radio;
+    
+    // 2. Validar que el radio sea positivo
+    if (radio < 0) {
+        std::cout << "Error: El radio debe ser positivo." << std::endl;
+        return 1; // Salir del programa con error
+    }
+    
+    // 3. Calcular el área
+    area = PI * radio * radio;
+    
+    // 4. Mostrar el resultado con dos decimales
+    std::cout << std::fixed << std::setprecision(2);
+    std::cout << "El área del círculo es: " << area << std::endl;
+    
+    return 0;
+}
+
