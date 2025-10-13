@@ -1,0 +1,42 @@
+#include <iostream>
+
+
+int main() {
+    int saldo = 1000;  // Saldo inicial
+    int opcion;
+    int monto;
+    
+    std::cout << "Bienvenido al Cajero Automático. Saldo inicial: " << saldo << std::endl;
+    
+    // Bucle para mostrar el menú hasta salir
+    while (true) {
+        std::cout << "\nOpciones:\n1. Consultar saldo\n2. Retirar dinero\n0. Salir\nElige una opción: ";
+        std::cin >> opcion;
+        
+        // Usar switch para manejar opciones
+        switch (opcion) {
+            case 1:
+                std::cout << "Saldo actual: " << saldo << std::endl;
+                break;
+            case 2:
+                std::cout << "Ingresa el monto a retirar: ";
+                std::cin >> monto;
+                if (monto > 0 && monto <= saldo) {
+                    saldo -= monto;
+                    std::cout << "Retiro exitoso. Saldo restante: " << saldo << std::endl;
+                } else if (monto <= 0) {
+                    std::cout << "Error: Monto debe ser positivo." << std::endl;
+                } else {
+                    std::cout << "Error: Saldo insuficiente." << std::endl;
+                }
+                break;
+            case 0:
+                std::cout << "Gracias por usar el cajero. Saldo final: " << saldo << std::endl;
+                return 0;  // Salir del programa
+            default:
+                std::cout << "Opción inválida. Intenta de nuevo." << std::endl;
+        }
+    }
+    
+    return 0;
+}
