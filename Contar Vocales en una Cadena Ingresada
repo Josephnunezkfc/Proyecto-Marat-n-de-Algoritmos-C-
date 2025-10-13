@@ -1,0 +1,25 @@
+#include <iostream>
+#include <string>
+#include <cctype>  // Para tolower
+
+int main() {
+    std::string cadena;
+    int conteoVocales = 0;
+    
+    // 1. Pedir la cadena al usuario
+    std::cout << "Ingresa una cadena: ";
+    std::getline(std::cin, cadena);
+    
+    // 2. Bucle para contar vocales (insensible a mayúsculas)
+    for (char c : cadena) {
+        char vocal = std::tolower(c);  // Convertir a minúscula
+        if (vocal == 'a' || vocal == 'e' || vocal == 'i' || vocal == 'o' || vocal == 'u') {
+            ++conteoVocales;
+        }
+    }
+    
+    // 3. Mostrar el resultado
+    std::cout << "Número de vocales: " << conteoVocales << std::endl;
+    
+    return 0;
+}
