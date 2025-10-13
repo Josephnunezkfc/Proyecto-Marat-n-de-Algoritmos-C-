@@ -1,0 +1,22 @@
+#include <iostream>
+#include <cmath>
+using namespace std;
+
+int main() {
+    double radio, area;
+    const double PI = 3.141592653589793;
+
+    cout << "Ingrese el radio del círculo: ";
+    cin >> radio;
+
+    if (radio < 0) {
+        cout << "Radio inválido." << endl;
+        return 1;
+    }
+
+    area = PI * pow(radio, 2);
+
+    cout << "El área del círculo es: " << area << endl;
+
+    return 0;
+}
