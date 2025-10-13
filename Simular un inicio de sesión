@@ -1,0 +1,34 @@
+#include <iostream>
+#include <string>
+using namespace std;
+
+
+int main() {
+const string CONTRASENIA_CORRECTA = "1234";
+string contraseniaIngresada;
+bool accesoConcedido = false;
+
+
+for (int intento = 1; intento <= 3; ++intento) {
+cout << "Intento " << intento << " de 3. Ingrese su contraseña: ";
+cin >> contraseniaIngresada;
+
+
+if (contraseniaIngresada == CONTRASENIA_CORRECTA) {
+accesoConcedido = true;
+break; // Salir del bucle si la contraseña es correcta
+} else {
+cout << "Contraseña incorrecta." << endl;
+}
+}
+
+
+if (accesoConcedido) {
+cout << "\n¡Acceso concedido!" << endl;
+} else {
+cout << "\nAcceso denegado. Ha excedido el número de intentos." << endl;
+}
+
+
+return 0;
+}
