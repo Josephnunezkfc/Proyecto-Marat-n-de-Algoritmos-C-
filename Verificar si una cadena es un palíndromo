@@ -1,0 +1,35 @@
+#include <iostream>
+#include <string>
+#include <cctype>
+using namespace std;
+
+int main() {
+    string texto, limpio;
+    cout << "Ingrese una cadena: ";
+    getline(cin, texto);
+
+    // Eliminar espacios y convertir a minúsculas
+    for (char c : texto) {
+        if (isalnum(c)) {
+            limpio += tolower(c);
+        }
+    }
+
+    bool esPalindromo = true;
+    int n = limpio.length();
+
+    for (int i = 0; i < n / 2; ++i) {
+        if (limpio[i] != limpio[n - 1 - i]) {
+            esPalindromo = false;
+            break;
+        }
+    }
+
+    if (esPalindromo)
+        cout << "La cadena es un palíndromo." << endl;
+    else
+        cout << "La cadena NO es un palíndromo." << endl;
+
+    return 0;
+}
+
