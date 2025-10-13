@@ -1,0 +1,33 @@
+#include <iostream>
+using namespace std;
+
+
+int main() {
+int numero, suma = 0, resto;
+
+
+cout << "Ingrese un número entero positivo: ";
+cin >> numero;
+
+
+if (numero < 0) {
+cout << "Por favor, ingrese un número positivo." << endl;
+return 1;
+}
+
+
+int original = numero;
+
+
+while (numero > 0) {
+resto = numero % 10;
+suma += resto;
+numero /= 10;
+}
+
+
+cout << "La suma de los dígitos de " << original << " es: " << suma << endl;
+
+
+return 0;
+}
