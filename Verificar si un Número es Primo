@@ -1,0 +1,36 @@
+#include <iostream>
+#include <cmath> // Para la función sqrt()
+
+
+int main() {
+int numero;
+bool esPrimo = true;
+
+
+std::cout << "Ingresa un número entero para verificar si es primo: ";
+std::cin >> numero;
+
+
+// Los números primos son mayores que 1
+if (numero <= 1) {
+esPrimo = false;
+} else {
+// Buscamos divisores desde 2 hasta la raíz cuadrada del número
+for (int i = 2; i <= sqrt(numero); ++i) {
+if (numero % i == 0) {
+esPrimo = false; // Se encontró un divisor
+break; // No es necesario seguir buscando
+}
+}
+}
+
+
+if (esPrimo) {
+std::cout << "El número " << numero << " es primo." << std::endl;
+} else {
+std::cout << "El número " << numero << " no es primo." << std::endl;
+}
+
+
+return 0;
+}
