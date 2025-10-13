@@ -7,7 +7,9 @@ int main() {
     cout << "Ingrese un número entero: ";
     cin >> num;
 
-    for (int i = 1; i <= 10; i++) {
+    cout << "Tabla de multiplicar del " << num << ":" << endl;
+
+    for (int i = 1; i <= 10; ++i) {
         cout << num << " x " << i << " = " << num * i << endl;
     }
 
