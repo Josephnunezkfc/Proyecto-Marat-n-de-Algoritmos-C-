@@ -1,0 +1,89 @@
+#include <iostream>
+#include <limits> // Necesario para limpiar el buffer de entrada
+
+using namespace std;
+
+// --- Declaración de Funciones ---
+double celsiusAFahrenheit(double celsius);
+double fahrenheitACelsius(double fahrenheit);
+void limpiarBuffer();
+
+// --- Programa Principal ---
+int main() {
+    double temperatura, temperaturaConvertida;
+    char opcion, continuar;
+
+    do {
+        // --- Menú Principal ---
+        cout << "\n--- CONVERTIDOR DE TEMPERATURA ---" << endl;
+        cout << "Ingrese la temperatura a convertir: ";
+        cin >> temperatura;
+
+        // Validación de entrada numérica
+        if (cin.fail()) {
+            cout << "Error: Entrada no válida. Debe ser un número." << endl;
+            limpiarBuffer();
+            continue; // Vuelve al inicio del bucle
+        }
+
+        cout << "\n¿A qué unidad desea convertir?" << endl;
+        cout << "  [C] Convertir a Celsius (desde Fahrenheit)" << endl;
+        cout << "  [F] Convertir a Fahrenheit (desde Celsius)" << endl;
+        cout << "Opción: ";
+        cin >> opcion;
+
+        // --- Lógica de Conversión ---
+        switch (opcion) {
+            case 'F':
+            case 'f':
+                temperaturaConvertida = celsiusAFahrenheit(temperatura);
+                cout << temperatura << "°C es igual a " << temperaturaConvertida << "°F" << endl;
+                break;
+            case 'C':
+            case 'c':
+                temperaturaConvertida = fahrenheitACelsius(temperatura);
+                cout << temperatura << "°F es igual a " << temperaturaConvertida << "°C" << endl;
+                break;
+            default:
+                cout << "Opción no válida. Por favor, elija 'C' o 'F'." << endl;
+                break;
+        }
+
+        // --- Preguntar si desea continuar ---
+        cout << "\n¿Desea realizar otra conversión? (S/N): ";
+        cin >> continuar;
+
+    } while (continuar == 'S' || continuar == 's');
+
+    cout << "\n¡Gracias por usar el convertidor! Hasta pronto." << endl;
+
+    return 0;
+}
+
+// --- Implementación de Funciones ---
+
+/**
+ * @brief Convierte una temperatura de grados Celsius a Fahrenheit.
+ * @param celsius La temperatura en grados Celsius.
+ * @return La temperatura equivalente en grados Fahrenheit.
+ */
+double celsiusAFahrenheit(double celsius) {
+    return (celsius * 9.0 / 5.0) + 32.0;
+}
+
+/**
+ * @brief Convierte una temperatura de grados Fahrenheit a Celsius.
+ * @param fahrenheit La temperatura en grados Fahrenheit.
+ * @return La temperatura equivalente en grados Celsius.
+ */
+double fahrenheitACelsius(double fahrenheit) {
+    return (fahrenheit - 32.0) * 5.0 / 9.0;
+}
+
+/**
+ * @brief Limpia el buffer de entrada de cin para evitar errores con entradas no numéricas.
+ */
+void limpiarBuffer() {
+    cin.clear(); // Restablece las banderas de error de cin
+    cin.ignore(numeric_limits<streamsize>::max(), '\n'); // Descarta la entrada incorrecta
+}
