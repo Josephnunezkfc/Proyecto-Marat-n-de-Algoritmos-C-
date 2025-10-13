@@ -1,0 +1,41 @@
+#include <iostream>
+
+
+int main() {
+long long numero;
+int suma = 0;
+
+
+// 1. Solicitar entrada al usuario
+std::cout << "Ingresa un número entero positivo: ";
+std::cin >> numero;
+
+
+// 2. Validar que el número sea positivo
+if (numero < 0) {
+std::cout << "Error: El número debe ser positivo." << std::endl;
+return 1; // Salir con código de error
+}
+
+
+// 3. Manejar el caso especial del 0
+if (numero == 0) {
+std::cout << "La suma de los dígitos de 0 es: 0" << std::endl;
+return 0; // Salir exitosamente
+}
+
+
+// 4. Bucle para sumar los dígitos
+while (numero > 0) {
+int digito = numero % 10; // Extraer el último dígito
+suma += digito; // Sumar el dígito a la suma total
+numero /= 10; // Eliminar el último dígito
+}
+
+
+// 5. Mostrar el resultado
+std::cout << "La suma de los dígitos es: " << suma << std::endl;
+
+
+return 0;
+}
