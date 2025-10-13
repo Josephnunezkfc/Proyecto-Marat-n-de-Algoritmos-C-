@@ -1,0 +1,33 @@
+#include <iostream>
+
+const int TAM = 5;  // Tamaño fijo del array
+
+// Función para encontrar el número mayor
+int encontrarMayor(int arr[], int tam) {
+    if (tam <= 0) return 0;  // Caso base inválido, pero asumimos tam > 0
+    int mayor = arr[0];  // Inicializar con el primer elemento
+    for (int i = 1; i < tam; ++i) {
+        if (arr[i] > mayor) {
+            mayor = arr[i];  // Actualizar si se encuentra mayor
+        }
+    }
+    return mayor;
+}
+
+int main() {
+    int numeros[TAM];
+    
+    // 1. Pedir al usuario ingresar los valores del array
+    std::cout << "Ingresa " << TAM << " números enteros:" << std::endl;
+    for (int i = 0; i < TAM; ++i) {
+        std::cout << "Número " << (i + 1) << ": ";
+        std::cin >> numeros[i];
+    }
+    
+    // 2. Encontrar y mostrar el mayor usando la función
+    int maximo = encontrarMayor(numeros, TAM);
+    std::cout << "El número mayor en el array es: " << maximo << std::endl;
+    
+    return 0;
+}
+
