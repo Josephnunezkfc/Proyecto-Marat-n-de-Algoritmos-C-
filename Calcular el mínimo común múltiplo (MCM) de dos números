@@ -1,0 +1,29 @@
+#include <iostream>
+using namespace std;
+
+int main() {
+    int a, b, mcd, mcm;
+
+    cout << "Ingrese dos números enteros positivos: ";
+    cin >> a >> b;
+
+    if (a <= 0 || b <= 0) {
+        cout << "Los números deben ser positivos." << endl;
+        return 1;
+    }
+
+    int x = a, y = b;
+    while (y != 0) {
+        int temp = y;
+        y = x % y;
+        x = temp;
+    }
+    mcd = x;
+
+    mcm = (a / mcd) * b;
+
+    cout << "El mínimo común múltiplo es: " << mcm << endl;
+
+    return 0;
+}
+
