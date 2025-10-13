@@ -1,0 +1,27 @@
+#include <iostream>
+using namespace std;
+
+int main() {
+    int n;
+    cout << "Ingrese el número de elementos: ";
+    cin >> n;
+
+    if (n <= 0) {
+        cout << "El tamaño debe ser un número positivo." << endl;
+        return 1;
+    }
+
+    double numeros[n];
+    double suma = 0.0;
+
+    for (int i = 0; i < n; ++i) {
+        cout << "Ingrese el número " << i + 1 << ": ";
+        cin >> numeros[i];
+        suma += numeros[i];
+    }
+
+    double promedio = suma / n;
+    cout << "El promedio es: " << promedio << endl;
+
+    return 0;
+}
