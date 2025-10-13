@@ -1,0 +1,45 @@
+#include <iostream>
+#include <iomanip>
+
+
+int main() {
+int opcion;
+double cantidad, resultado;
+const double USD_A_EUR = 0.92; // Tasa de cambio de ejemplo
+const double EUR_A_USD = 1.09; // Tasa de cambio de ejemplo
+
+
+std::cout << "--- Conversor de Moneda Simple ---" << std::endl;
+std::cout << "Tasas de cambio de ejemplo: 1 USD = 0.92 EUR, 1 EUR = 1.09 USD" << std::endl;
+std::cout << "1. Convertir de Dólares (USD) a Euros (EUR)" << std::endl;
+std::cout << "2. Convertir de Euros (EUR) a Dólares (USD)" << std::endl;
+std::cout << "3. Salir" << std::endl;
+std::cout << "Ingrese una opción: ";
+std::cin >> opcion;
+
+
+switch (opcion) {
+case 1:
+std::cout << "Ingrese la cantidad en Dólares (USD): ";
+std::cin >> cantidad;
+resultado = cantidad * USD_A_EUR;
+std::cout << std::fixed << std::setprecision(2);
+std::cout << cantidad << " USD equivalen a " << resultado << " EUR." << std::endl;
+break;
+case 2:
+std::cout << "Ingrese la cantidad en Euros (EUR): ";
+std::cin >> cantidad;
+resultado = cantidad * EUR_A_USD;
+std::cout << std::fixed << std::setprecision(2);
+std::cout << cantidad << " EUR equivalen a " << resultado << " USD." << std::endl;
+break;
+case 3:
+std::cout << "Saliendo del conversor..." << std::endl;
+break;
+default:
+std::cout << "Opción inválida." << std::endl;
+}
+
+
+return 0;
+}
