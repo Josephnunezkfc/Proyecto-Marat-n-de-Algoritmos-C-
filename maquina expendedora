@@ -1,0 +1,93 @@
+#include <iostream>
+using namespace std;
+
+int main() {
+    // Estado inicial de la máquina
+    int dineroIngresado = 0;
+    int stockRefresco = 5;
+    int stockPapas = 5;
+    int stockChocolate = 5;
+
+    // Precios de los productos (en centavos para evitar decimales)
+    const int PRECIO_REFRESCO = 150;
+    const int PRECIO_PAPAS = 100;
+    const int PRECIO_CHOCOLATE = 80;
+
+    int opcion, seleccion;
+
+    cout << "Bienvenido a la máquina expendedora." << endl;
+    cout << "-----------------------------------" << endl;
+    cout << "1. Insertar dinero" << endl;
+    cout << "2. Comprar producto" << endl;
+    cout << "3. Salir (recuperar dinero)" << endl;
+    cout << "Ingrese opción: ";
+    cin >> opcion;
+
+    if (opcion == 1) {
+        int cantidad;
+        cout << "Ingrese cantidad a insertar (en centavos): ";
+        cin >> cantidad;
+        if (cantidad > 0) {
+            dineroIngresado += cantidad;
+            cout << "Dinero ingresado. Su saldo actual es: $" << dineroIngresado / 100.0 << endl;
+        } else {
+            cout << "Cantidad inválida." << endl;
+        }
+    } else if (opcion == 2) {
+        cout << "--- Productos Disponibles ---" << endl;
+        cout << "1. Refresco - $" << PRECIO_REFRESCO / 100.0 << " (Stock: " << stockRefresco << ")" << endl;
+        cout << "2. Papas - $" << PRECIO_PAPAS / 100.0 << " (Stock: " << stockPapas << ")" << endl;
+        cout << "3. Chocolate - $" << PRECIO_CHOCOLATE / 100.0 << " (Stock: " << stockChocolate << ")" << endl;
+        cout << "Seleccione un producto: ";
+        cin >> seleccion;
+
+        if (seleccion == 1) { // Comprar Refresco
+            if (stockRefresco > 0 && dineroIngresado >= PRECIO_REFRESCO) {
+                stockRefresco--;
+                dineroIngresado -= PRECIO_REFRESCO;
+                cout << "¡Refresco entregado! Su saldo restante es: $" << dineroIngresado / 100.0 << endl;
+            } else {
+                cout << "No se puede completar la compra. ";
+                if (stockRefresco <= 0) {
+                    cout << "Producto agotado." << endl;
+                } else {
+                    cout << "Dinero insuficiente." << endl;
+                }
+            }
+        } else if (seleccion == 2) { // Comprar Papas
+            if (stockPapas > 0 && dineroIngresado >= PRECIO_PAPAS) {
+                stockPapas--;
+                dineroIngresado -= PRECIO_PAPAS;
+                cout << "¡Papas entregadas! Su saldo restante es: $" << dineroIngresado / 100.0 << endl;
+            } else {
+                cout << "No se puede completar la compra. ";
+                if (stockPapas <= 0) {
+                    cout << "Producto agotado." << endl;
+                } else {
+                    cout << "Dinero insuficiente." << endl;
+                }
+            }
+        } else if (seleccion == 3) { // Comprar Chocolate
+            if (stockChocolate > 0 && dineroIngresado >= PRECIO_CHOCOLATE) {
+                stockChocolate--;
+                dineroIngresado -= PRECIO_CHOCOLATE;
+                cout << "¡Chocolate entregado! Su saldo restante es: $" << dineroIngresado / 100.0 << endl;
+            } else {
+                cout << "No se puede completar la compra. ";
+                if (stockChocolate <= 0) {
+                    cout << "Producto agotado." << endl;
+                } else {
+                    cout << "Dinero insuficiente." << endl;
+                }
+            }
+        } else {
+            cout << "Selección de producto inválida." << endl;
+        }
+    } else if (opcion == 3) {
+        cout << "Saliendo... Recupere su dinero: $" << dineroIngresado / 100.0 << endl;
+    } else {
+        cout << "Opción inválida." << endl;
+    }
+
+    return 0;
+}
