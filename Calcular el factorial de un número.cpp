@@ -3,19 +3,21 @@ using namespace std;
 
 int main() {
     int n;
+    unsigned long long factorial = 1;
 
-    cout << "Ingrese un número entero positivo: ";
+    cout << "Ingrese un número entero no negativo: ";
     cin >> n;
 
-    if (n <= 0) {
+    if (n < 0) {
         cout << "Número inválido." << endl;
         return 1;
     }
 
     for (int i = 1; i <= n; ++i) {
-        cout << i << " ";
+        factorial *= i;
     }
-    cout << endl;
+
+    cout << "El factorial de " << n << " es: " << factorial << endl;
 
     return 0;
 }

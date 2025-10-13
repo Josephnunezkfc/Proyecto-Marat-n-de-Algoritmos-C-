@@ -2,7 +2,7 @@
 using namespace std;
 
 int main() {
-    int n;
+    int n, suma = 0;
 
     cout << "Ingrese un número entero positivo: ";
     cin >> n;
@@ -12,10 +12,11 @@ int main() {
         return 1;
     }
 
-    for (int i = 1; i <= n; ++i) {
-        cout << i << " ";
+    for (int i = 1; i <= n; i++) {
+        suma += i;
     }
-    cout << endl;
+
+    cout << "La suma de los primeros " << n << " números naturales es: " << suma << endl;
 
     return 0;
 }
