@@ -1,0 +1,29 @@
+#include <iostream>
+
+
+int main() {
+    int n;
+    long long factorial = 1;  // Usar long long para manejar valores mayores
+    
+    // 1. Pedir al usuario que ingrese un número
+    std::cout << "Ingresa un número entero no negativo: ";
+    std::cin >> n;
+    
+    // 2. Validar que n sea no negativo
+    if (n < 0) {
+        std::cout << "Error: El número debe ser no negativo." << std::endl;
+        return 1; // Salir del programa con error
+    }
+    
+    // 3. Bucle para calcular el factorial
+    for (int i = 1; i <= n; ++i) {
+        factorial *= i;  // Multiplicar acumulativamente
+    }
+    
+    // 4. Mostrar el resultado
+    std::cout << "El factorial de " << n << " es: " << factorial << std::endl;
+    
+    return 0;
+}
+
+
