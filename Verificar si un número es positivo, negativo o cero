@@ -1,0 +1,38 @@
+#include <iostream>
+
+
+// Función que verifica el signo de un número
+char verificarSigno(int numero) {
+if (numero > 0) {
+return '+';
+} else if (numero < 0) {
+return '-';
+} else {
+return '0';
+}
+}
+
+
+int main() {
+int numero;
+
+
+std::cout << "Ingresa un número entero: ";
+std::cin >> numero;
+
+
+switch (verificarSigno(numero)) {
+case '+':
+std::cout << "El número es positivo." << std::endl;
+break;
+case '-':
+std::cout << "El número es negativo." << std::endl;
+break;
+case '0':
+std::cout << "El número es cero." << std::endl;
+break;
+}
+
+
+return 0;
+}
