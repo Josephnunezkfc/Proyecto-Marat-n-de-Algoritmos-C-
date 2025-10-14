@@ -1,0 +1,34 @@
+#include <iostream>
+
+
+int main() {
+int altura;
+
+
+std::cout << "Ingresa la altura de la pirámide (número entero positivo): ";
+std::cin >> altura;
+
+
+if (altura <= 0) {
+std::cout << "Error: La altura debe ser un número positivo." << std::endl;
+return 1;
+}
+
+
+// Bucle externo para cada fila
+for (int i = 1; i <= altura; ++i) {
+// Bucle interno para imprimir los espacios en blanco
+for (int j = 0; j < altura - i; ++j) {
+std::cout << " ";
+}
+// Bucle interno para imprimir los asteriscos
+for (int k = 0; k < 2 * i - 1; ++k) {
+std::cout << "*";
+}
+// Nueva línea al final de cada fila
+std::cout << std::endl;
+}
+
+
+return 0;
+}
