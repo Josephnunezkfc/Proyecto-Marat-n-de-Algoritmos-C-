@@ -1,0 +1,27 @@
+#include <iostream>
+#include <iomanip>
+
+
+int main() {
+double arista, volumen;
+
+
+std::cout << "Ingresa la longitud de la arista del cubo: ";
+std::cin >> arista;
+
+
+if (arista <= 0) {
+std::cout << "Error: La arista debe ser un valor positivo." << std::endl;
+return 1;
+}
+
+
+volumen = arista * arista * arista;
+
+
+std::cout << std::fixed << std::setprecision(2);
+std::cout << "El volumen del cubo es: " << volumen << std::endl;
+
+
+return 0;
+}
