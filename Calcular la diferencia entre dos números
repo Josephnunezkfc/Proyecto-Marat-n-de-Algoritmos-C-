@@ -1,0 +1,22 @@
+#include <iostream>
+#include <cmath> // Para fabs()
+
+
+int main() {
+double num1, num2, diferencia;
+
+
+std::cout << "Ingresa el primer número: ";
+std::cin >> num1;
+std::cout << "Ingresa el segundo número: ";
+std::cin >> num2;
+
+
+diferencia = fabs(num1 - num2);
+
+
+std::cout << "La diferencia entre " << num1 << " y " << num2 << " es: " << diferencia << std::endl;
+
+
+return 0;
+}
