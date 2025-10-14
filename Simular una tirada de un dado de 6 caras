@@ -1,0 +1,19 @@
+#include <iostream>
+#include <cstdlib> // Para rand() y srand()
+#include <ctime> // Para time()
+
+
+int main() {
+// Inicializar la semilla del generador de números aleatorios
+srand(time(0));
+
+
+int resultadoDado = (rand() % 6) + 1;
+
+
+std::cout << "Simulando una tirada de un dado de 6 caras..." << std::endl;
+std::cout << "Resultado: " << resultadoDado << std::endl;
+
+
+return 0;
+}
