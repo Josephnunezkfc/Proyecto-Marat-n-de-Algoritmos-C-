@@ -1,0 +1,31 @@
+#include <iostream>
+#include <iomanip>
+
+
+int main() {
+double capital, tasa, tiempo, interes;
+
+
+std::cout << "Ingresa el capital inicial: ";
+std::cin >> capital;
+std::cout << "Ingresa la tasa de interés anual (%): ";
+std::cin >> tasa;
+std::cout << "Ingresa el tiempo en años: ";
+std::cin >> tiempo;
+
+
+if (capital < 0 || tasa < 0 || tiempo < 0) {
+std::cout << "Error: Todos los valores deben ser positivos." << std::endl;
+return 1;
+}
+
+
+interes = capital * (tasa / 100.0) * tiempo;
+
+
+std::cout << std::fixed << std::setprecision(2);
+std::cout << "El interés simple generado es: $" << interes << std::endl;
+
+
+return 0;
+}
