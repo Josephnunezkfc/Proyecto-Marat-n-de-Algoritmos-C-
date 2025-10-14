@@ -1,0 +1,47 @@
+#include <iostream>
+#include <cmath>
+
+
+int main() {
+int numero;
+long long suma = 0;
+std::cout << "Ingresa un número entero positivo para verificar si es de Armstrong: ";
+std::cin >> numero;
+
+
+// Guardar el número original para comparaciones futuras
+int numeroOriginal = numero;
+int nDigitos = 0;
+
+
+// 1. Contar el número de dígitos
+if (numeroOriginal == 0) {
+nDigitos = 1;
+} else {
+while (numeroOriginal != 0) {
+numeroOriginal /= 10;
+nDigitos++;
+}
+}
+// Restaurar el número original para el siguiente cálculo
+numeroOriginal = numero;
+
+
+// 2. Calcular la suma de los dígitos elevados a la potencia nDigitos
+while (numeroOriginal != 0) {
+int digito = numeroOriginal % 10;
+suma += pow(digito, nDigitos);
+numeroOriginal /= 10;
+}
+
+
+// 3. Comparar y mostrar el resultado
+if (suma == numero) {
+std::cout << "El número " << numero << " es un número de Armstrong." << std::endl;
+} else {
+std::cout << "El número " << numero << " no es un número de Armstrong." << std::endl;
+}
+
+
+return 0;
+}
