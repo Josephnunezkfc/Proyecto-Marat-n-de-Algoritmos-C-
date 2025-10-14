@@ -1,0 +1,32 @@
+#include <iostream>
+
+
+int main() {
+long long numero;
+int suma = 0;
+
+
+std::cout << "Ingresa un número entero positivo: ";
+std::cin >> numero;
+
+
+if (numero < 0) {
+std::cout << "Error: El número debe ser positivo." << std::endl;
+return 1;
+}
+
+
+while (numero > 0) {
+int digito = numero % 10;
+if (digito % 2 != 0) {
+suma += digito;
+}
+numero /= 10;
+}
+
+
+std::cout << "La suma de los dígitos impares es: " << suma << std::endl;
+
+
+return 0;
+}
