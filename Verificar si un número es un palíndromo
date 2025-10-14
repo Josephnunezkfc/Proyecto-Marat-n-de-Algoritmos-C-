@@ -1,0 +1,36 @@
+#include <iostream>
+
+
+int main() {
+int numero, original, invertido = 0;
+
+
+std::cout << "Ingresa un número entero positivo: ";
+std::cin >> numero;
+
+
+if (numero < 0) {
+std::cout << "Error: El número debe ser positivo." << std::endl;
+return 1;
+}
+
+
+original = numero;
+
+
+while (numero > 0) {
+int digito = numero % 10;
+invertido = invertido * 10 + digito;
+numero /= 10;
+}
+
+
+if (original == invertido) {
+std::cout << "El número " << original << " es un palíndromo." << std::endl;
+} else {
+std::cout << "El número " << original << " no es un palíndromo." << std::endl;
+}
+
+
+return 0;
+}
