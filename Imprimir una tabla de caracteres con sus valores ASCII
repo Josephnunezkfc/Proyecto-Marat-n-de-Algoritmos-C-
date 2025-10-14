@@ -1,0 +1,17 @@
+#include <iostream>
+#include <iomanip> // Para setw()
+
+
+int main() {
+std::cout << "Tabla ASCII (caracteres imprimibles):" << std::endl;
+std::cout << "Valor\tCarácter" << std::endl;
+std::cout << "-----\t---------" << std::endl;
+
+
+for (int i = 32; i <= 126; ++i) {
+std::cout << std::setw(3) << i << "\t" << static_cast<char>(i) << std::endl;
+}
+
+
+return 0;
+}
