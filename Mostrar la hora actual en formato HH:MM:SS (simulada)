@@ -1,0 +1,30 @@
+#include <iostream>
+#include <iomanip>
+
+
+int main() {
+int horas, minutos, segundos;
+
+
+std::cout << "Ingresa la hora (0-23): ";
+std::cin >> horas;
+std::cout << "Ingresa los minutos (0-59): ";
+std::cin >> minutos;
+std::cout << "Ingresa los segundos (0-59): ";
+std::cin >> segundos;
+
+
+if (horas < 0 || horas > 23 || minutos < 0 || minutos > 59 || segundos < 0 || segundos > 59) {
+std::cout << "Error: Valores de tiempo inválidos." << std::endl;
+return 1;
+}
+
+
+std::cout << "Hora simulada: ";
+std::cout << std::setfill('0') << std::setw(2) << horas << ":";
+std::cout << std::setfill('0') << std::setw(2) << minutos << ":";
+std::cout << std::setfill('0') << std::setw(2) << segundos << std::endl;
+
+
+return 0;
+}
