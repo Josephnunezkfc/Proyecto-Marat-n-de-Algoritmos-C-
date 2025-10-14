@@ -1,0 +1,30 @@
+
+
+#include <iostream>
+
+
+int main() {
+int n, suma = 0;
+
+
+std::cout << "Ingresa un número entero positivo n: ";
+std::cin >> n;
+
+
+if (n < 2) {
+std::cout << "No hay números pares para sumar hasta " << n << std::endl;
+return 0;
+}
+
+
+for (int i = 2; i <= n; i += 2) {
+suma += i;
+}
+
+
+std::cout << "La suma de los números pares hasta " << n << " es: " << suma << std::endl;
+
+
+return 0;
+}
+Prueba
