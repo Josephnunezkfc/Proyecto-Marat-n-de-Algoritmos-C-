@@ -1,0 +1,27 @@
+#include <iostream>
+
+
+int main() {
+int a, b;
+
+
+std::cout << "Ingresa el valor de a: ";
+std::cin >> a;
+std::cout << "Ingresa el valor de b: ";
+std::cin >> b;
+
+
+std::cout << "\nValores originales: a = " << a << ", b = " << b << std::endl;
+
+
+// Intercambio sin variable temporal (método aritmético)
+a = a + b;
+b = a - b;
+a = a - b;
+
+
+std::cout << "Valores intercambiados: a = " << a << ", b = " << b << std::endl;
+
+
+return 0;
+}
