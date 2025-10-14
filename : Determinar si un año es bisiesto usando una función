@@ -1,0 +1,26 @@
+#include <iostream>
+
+
+// Función que determina si un año es bisiesto
+bool esBisiesto(int anio) {
+return (anio % 4 == 0 && anio % 100 != 0) || (anio % 400 == 0);
+}
+
+
+int main() {
+int anio;
+
+
+std::cout << "Ingresa un año: ";
+std::cin >> anio;
+
+
+if (esBisiesto(anio)) {
+std::cout << "El año " << anio << " es bisiesto." << std::endl;
+} else {
+std::cout << "El año " << anio << " no es bisiesto." << std::endl;
+}
+
+
+return 0;
+}
