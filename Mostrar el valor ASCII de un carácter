@@ -1,0 +1,17 @@
+#include <iostream>
+
+
+int main() {
+char caracter;
+
+
+std::cout << "Ingresa un carácter: ";
+std::cin >> caracter;
+
+
+// Al imprimir, se convierte (cast) a int para mostrar el valor ASCII
+std::cout << "El valor ASCII de '" << caracter << "' es: " << static_cast<int>(caracter) << std::endl;
+
+
+return 0;
+}
