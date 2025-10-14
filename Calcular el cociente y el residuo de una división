@@ -1,0 +1,29 @@
+#include <iostream>
+
+
+int main() {
+int dividendo, divisor, cociente, residuo;
+
+
+std::cout << "Ingresa el dividendo: ";
+std::cin >> dividendo;
+std::cout << "Ingresa el divisor: ";
+std::cin >> divisor;
+
+
+if (divisor == 0) {
+std::cout << "Error: No se puede dividir por cero." << std::endl;
+return 1;
+}
+
+
+cociente = dividendo / divisor;
+residuo = dividendo % divisor;
+
+
+std::cout << "Cociente: " << cociente << std::endl;
+std::cout << "Residuo: " << residuo << std::endl;
+
+
+return 0;
+}
