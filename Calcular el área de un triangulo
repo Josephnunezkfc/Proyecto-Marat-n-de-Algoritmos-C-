@@ -1,0 +1,30 @@
+⌄
+#include <iostream>
+#include <iomanip>
+
+
+int main() {
+double base, altura, area;
+
+
+std::cout << "Ingresa la base del triángulo: ";
+std::cin >> base;
+std::cout << "Ingresa la altura del triángulo: ";
+std::cin >> altura;
+
+
+if (base <= 0 || altura <= 0) {
+std::cout << "Error: La base y la altura deben ser valores positivos." << std::endl;
+return 1;
+}
+
+
+area = (base * altura) / 2.0;
+
+
+std::cout << std::fixed << std::setprecision(2);
+std::cout << "El área del triángulo es: " << area << std::endl;
+
+
+return 0;
+}
