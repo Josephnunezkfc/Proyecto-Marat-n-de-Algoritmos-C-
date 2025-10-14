@@ -1,0 +1,20 @@
+#include <iostream>
+#include <cctype> // Para tolower()
+
+
+int main() {
+char caracter;
+
+
+std::cout << "Ingresa un carácter: ";
+std::cin >> caracter;
+
+
+char caracterMinuscula = tolower(caracter);
+
+
+std::cout << "Carácter en minúscula: " << caracterMinuscula << std::endl;
+
+
+return 0;
+}
