@@ -1,0 +1,24 @@
+
+
+#include <iostream>
+
+
+int main() {
+const int N = 3;
+int mat[N][N];
+int traza = 0;
+
+
+// ... (código para leer la matriz)
+
+
+for (int i = 0; i < N; ++i) {
+traza += mat[i][i];
+}
+
+
+std::cout << "La traza de la matriz es: " << traza << std::endl;
+
+
+return 0;
+}
