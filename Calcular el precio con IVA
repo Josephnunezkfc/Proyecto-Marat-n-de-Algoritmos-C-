@@ -1,0 +1,30 @@
+#include <iostream>
+#include <iomanip> // Para std::fixed y std::setprecision
+
+
+int main() {
+double precioBase, porcentajeIVA, precioFinal;
+
+
+std::cout << "Ingresa el precio base del producto: ";
+std::cin >> precioBase;
+std::cout << "Ingresa el porcentaje de IVA: ";
+std::cin >> porcentajeIVA;
+
+
+if (precioBase < 0 || porcentajeIVA < 0) {
+std::cout << "Error: El precio y el IVA no pueden ser negativos." << std::endl;
+return 1;
+}
+
+
+precioFinal = precioBase + (precioBase * (porcentajeIVA / 100.0));
+
+
+// Formatear la salida para mostrar 2 decimales
+std::cout << std::fixed << std::setprecision(2);
+std::cout << "El precio final con IVA es: $" << precioFinal << std::endl;
+
+
+return 0;
+}
