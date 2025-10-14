@@ -1,0 +1,26 @@
+#include <iostream>
+
+
+int main() {
+int n;
+
+
+std::cout << "Ingresa un número entero positivo (n >= 3): ";
+std::cin >> n;
+
+
+if (n < 3) {
+std::cout << "No hay múltiplos de 3 hasta " << n << std::endl;
+return 0;
+}
+
+
+std::cout << "Múltiplos de 3 hasta " << n << ":" << std::endl;
+for (int i = 3; i <= n; i += 3) {
+std::cout << i << " ";
+}
+std::cout << std::endl;
+
+
+return 0;
+}
