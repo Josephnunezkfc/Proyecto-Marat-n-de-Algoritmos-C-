@@ -1,0 +1,22 @@
+#include <iostream>
+#include <cmath> // Para pow()
+#include <iomanip> // Para setprecision()
+
+
+int main() {
+double numero, raizCubica;
+
+
+std::cout << "Ingresa un número para calcular su raíz cúbica: ";
+std::cin >> numero;
+
+
+raizCubica = pow(numero, 1.0 / 3.0);
+
+
+std::cout << std::fixed << std::setprecision(4);
+std::cout << "La raíz cúbica de " << numero << " es: " << raizCubica << std::endl;
+
+
+return 0;
+}
