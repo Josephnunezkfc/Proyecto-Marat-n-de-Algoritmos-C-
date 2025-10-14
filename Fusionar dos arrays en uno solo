@@ -1,0 +1,21 @@
+#include <iostream>
+#include <vector>
+
+
+int main() {
+std::vector<int> arr1 = {1, 2, 3};
+std::vector<int> arr2 = {4, 5, 6};
+std::vector<int> fusionado;
+
+
+fusionado.insert(fusionado.end(), arr1.begin(), arr1.end());
+fusionado.insert(fusionado.end(), arr2.begin(), arr2.end());
+
+
+std::cout << "Array fusionado: ";
+for(int x : fusionado) std::cout << x << " ";
+std::cout << std::endl;
+
+
+return 0;
+}
