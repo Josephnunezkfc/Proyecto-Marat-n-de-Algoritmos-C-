@@ -1,0 +1,26 @@
+#include <iostream>
+#include <string>
+#include <cctype>
+
+
+int main() {
+std::string frase;
+int contLetras = 0;
+
+
+std::cout << "Ingresa una frase: ";
+std::getline(std::cin, frase);
+
+
+for (char c : frase) {
+if (isalpha(c)) {
+contLetras++;
+}
+}
+
+
+std::cout << "La frase contiene " << contLetras << " letras." << std::endl;
+
+
+return 0;
+}
