@@ -1,0 +1,20 @@
+#include <iostream>
+#include <vector>
+
+
+int main() {
+int n;
+std::cout << "¿Cuántos números? ";
+std::cin >> n;
+std::vector<int> numeros(n);
+std::cout << "Ingresa los números:" << std::endl;
+for(int i=0; i<n; ++i) std::cin >> numeros[i];
+long long producto = 1; // Usar long long para evitar overflow
+for (int x : numeros) {
+producto *= x;
+}
+
+
+std::cout << "El producto de los elementos es: " << producto << std::endl;
+return 0;
+}
