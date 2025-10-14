@@ -1,0 +1,18 @@
+#include <iostream>
+
+
+int main() {
+std::cout << "Abecedario en mayúsculas:" << std::endl;
+for (int i = 65; i <= 90; ++i) { // Códigos ASCII para 'A' a 'Z'
+std::cout << static_cast<char>(i) << std::endl;
+}
+
+
+std::cout << "\nAbecedario en minúsculas:" << std::endl;
+for (int i = 97; i <= 122; ++i) { // Códigos ASCII para 'a' a 'z'
+std::cout << static_cast<char>(i) << std::endl;
+}
+
+
+return 0;
+}
