@@ -1,0 +1,41 @@
+#include <iostream>
+#include <algorithm> // Para std::reverse
+
+
+int main() {
+int numero;
+char binario[32]; // Array para almacenar los bits (suficiente para un int de 32 bits)
+int i = 0;
+
+
+std::cout << "Ingresa un número entero positivo: ";
+std::cin >> numero;
+
+
+if (numero < 0) {
+std::cout << "Error: El número debe ser positivo." << std::endl;
+return 1;
+}
+if (numero == 0) {
+std::cout << "Representación binaria: 0" << std::endl;
+return 0;
+}
+
+
+while (numero > 0) {
+binario[i] = (numero % 2) + '0'; // Almacenar el dígito binario como carácter
+numero = numero / 2;
+i++;
+}
+binario[i] = '\0'; // Terminador de cadena
+
+
+// El array tiene los dígitos en orden inverso, así que lo invertimos
+std::reverse(binario, binario + i);
+
+
+std::cout << "Representación binaria: " << binario << std::endl;
+
+
+return 0;
+}
