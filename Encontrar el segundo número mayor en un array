@@ -1,0 +1,35 @@
+#include <iostream>
+#include <limits>
+#include <vector>
+
+
+int main() {
+int n;
+std::cout << "¿Cuántos números? ";
+std::cin >> n;
+if(n < 2) {
+std::cout << "Se necesitan al menos 2 números." << std::endl;
+return 1;
+}
+std::vector<int> numeros(n);
+std::cout << "Ingresa los números:" << std::endl;
+for(int i=0; i<n; ++i) std::cin >> numeros[i];
+
+
+int mayor = std::numeric_limits<int>::min();
+int segundoMayor = std::numeric_limits<int>::min();
+
+
+for (int x : numeros) {
+if (x > mayor) {
+segundoMayor = mayor;
+mayor = x;
+} else if (x > segundoMayor) {
+segundoMayor = x;
+}
+}
+
+
+std::cout << "El segundo número mayor es: " << segundoMayor << std::endl;
+return 0;
+}
