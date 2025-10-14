@@ -1,0 +1,27 @@
+#include <iostream>
+
+
+int main() {
+double base, altura, perimetro;
+
+
+std::cout << "Ingresa la base del rectángulo: ";
+std::cin >> base;
+std::cout << "Ingresa la altura del rectángulo: ";
+std::cin >> altura;
+
+
+if (base <= 0 || altura <= 0) {
+std::cout << "Error: La base y la altura deben ser positivas." << std::endl;
+return 1;
+}
+
+
+perimetro = 2 * (base + altura);
+
+
+std::cout << "El perímetro del rectángulo es: " << perimetro << std::endl;
+
+
+return 0;
+}
