@@ -1,0 +1,36 @@
+#include <iostream>
+#include <vector>
+
+
+int main() {
+std::vector<int> numeros = {10, 20, 30, 40, 50};
+int valorEliminar;
+
+
+std::cout << "Array original: ";
+for(int x : numeros) std::cout << x << " ";
+std::cout << "\nIngresa el valor a eliminar: ";
+std::cin >> valorEliminar;
+
+
+bool encontrado = false;
+for (int i = 0; i < numeros.size(); ++i) {
+if (numeros[i] == valorEliminar) {
+numeros.erase(numeros.begin() + i);
+encontrado = true;
+break; // Eliminar solo la primera aparición
+}
+}
+
+
+if (encontrado) {
+std::cout << "Array modificado: ";
+for(int x : numeros) std::cout << x << " ";
+std::cout << std::endl;
+} else {
+std::cout << "Valor no encontrado en el array." << std::endl;
+}
+
+
+return 0;
+}
