@@ -1,0 +1,34 @@
+#include <iostream>
+
+
+int main() {
+long long numero;
+int digitoBusqueda, conteo = 0;
+
+
+std::cout << "Ingresa un número entero positivo: ";
+std::cin >> numero;
+std::cout << "Ingresa el dígito a contar (0-9): ";
+std::cin >> digitoBusqueda;
+
+
+if (numero < 0 || digitoBusqueda < 0 || digitoBusqueda > 9) {
+std::cout << "Entrada inválida." << std::endl;
+return 1;
+}
+
+
+while (numero > 0) {
+int digitoActual = numero % 10;
+if (digitoActual == digitoBusqueda) {
+conteo++;
+}
+numero /= 10;
+}
+
+
+std::cout << "El dígito " << digitoBusqueda << " aparece " << conteo << " veces." << std::endl;
+
+
+return 0;
+}
