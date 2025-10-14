@@ -1,0 +1,30 @@
+#include <iostream>
+
+
+int main() {
+double lado1, lado2, lado3;
+
+
+std::cout << "Ingresa los tres lados del triángulo: ";
+std::cin >> lado1 >> lado2 >> lado3;
+
+
+if (lado1 <= 0 || lado2 <= 0 || lado3 <= 0) {
+std::cout << "Error: Los lados deben ser positivos." << std::endl;
+return 1;
+}
+if (lado1 + lado2 > lado3 && lado1 + lado3 > lado2 && lado2 + lado3 > lado1) {
+if (lado1 == lado2 && lado2 == lado3) {
+std::cout << "El triángulo es EQUILÁTERO." << std::endl;
+} else if (lado1 == lado2 || lado1 == lado3 || lado2 == lado3) {
+std::cout << "El triángulo es ISÓSCELES." << std::endl;
+} else {
+std::cout << "El triángulo es ESCALENO." << std::endl;
+}
+} else {
+std::cout << "Los lados ingresados NO forman un triángulo válido." << std::endl;
+}
+
+
+return 0;
+}
