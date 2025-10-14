@@ -1,0 +1,27 @@
+#include <iostream>
+
+
+int main() {
+int a, b, temp;
+
+
+std::cout << "Ingresa el valor de a: ";
+std::cin >> a;
+std::cout << "Ingresa el valor de b: ";
+std::cin >> b;
+
+
+std::cout << "\nValores originales: a = " << a << ", b = " << b << std::endl;
+
+
+// Intercambio usando variable temporal
+temp = a;
+a = b;
+b = temp;
+
+
+std::cout << "Valores intercambiados: a = " << a << ", b = " << b << std::endl;
+
+
+return 0;
+}
