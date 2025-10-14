@@ -1,0 +1,33 @@
+
+
+#include <iostream>
+
+
+int main() {
+double base;
+int exponente;
+double resultado = 1.0;
+
+
+std::cout << "Ingresa la base: ";
+std::cin >> base;
+std::cout << "Ingresa el exponente (entero no negativo): ";
+std::cin >> exponente;
+
+
+if (exponente < 0) {
+std::cout << "Error: Este programa solo maneja exponentes no negativos." << std::endl;
+return 1;
+}
+
+
+for (int i = 0; i < exponente; ++i) {
+resultado *= base;
+}
+
+
+std::cout << base << " elevado a la " << exponente << " es: " << resultado << std::endl;
+
+
+return 0;
+}
