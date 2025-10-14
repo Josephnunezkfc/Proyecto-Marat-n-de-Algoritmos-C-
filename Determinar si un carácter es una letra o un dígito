@@ -1,0 +1,23 @@
+#include <iostream>
+#include <cctype> // Para isalpha() y isdigit()
+
+
+int main() {
+char caracter;
+
+
+std::cout << "Ingresa un carácter: ";
+std::cin >> caracter;
+
+
+if (isalpha(caracter)) {
+std::cout << "'" << caracter << "' es una letra." << std::endl;
+} else if (isdigit(caracter)) {
+std::cout << "'" << caracter << "' es un dígito." << std::endl;
+} else {
+std::cout << "'" << caracter << "' no es una letra ni un dígito." << std::endl;
+}
+
+
+return 0;
+}
