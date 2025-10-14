@@ -1,0 +1,25 @@
+#include <iostream>
+
+
+int main() {
+double lado, perimetro;
+
+
+std::cout << "Ingresa la longitud del lado del cuadrado: ";
+std::cin >> lado;
+
+
+if (lado <= 0) {
+std::cout << "Error: La longitud del lado debe ser un valor positivo." << std::endl;
+return 1;
+}
+
+
+perimetro = 4 * lado;
+
+
+std::cout << "El perímetro del cuadrado es: " << perimetro << std::endl;
+
+
+return 0;
+}
