@@ -1,0 +1,37 @@
+
+
+#include <iostream>
+
+
+int main() {
+const int N = 3;
+int mat[N][N];
+bool esIdentidad = true;
+
+
+std::cout << "Ingresa los elementos de una matriz " << N << "x" << N << ":" << std::endl;
+for (int i = 0; i < N; ++i)
+for (int j = 0; j < N; ++j)
+std::cin >> mat[i][j];
+
+
+for (int i = 0; i < N; ++i) {
+for (int j = 0; j < N; ++j) {
+if ((i == j && mat[i][j] != 1) || (i != j && mat[i][j] != 0)) {
+esIdentidad = false;
+break;
+}
+}
+if (!esIdentidad) break;
+}
+
+
+if (esIdentidad) {
+std::cout << "La matriz es una matriz identidad." << std::endl;
+} else {
+std::cout << "La matriz NO es una matriz identidad." << std::endl;
+}
+
+
+return 0;
+}
