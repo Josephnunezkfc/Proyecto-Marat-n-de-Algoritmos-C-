@@ -1,0 +1,41 @@
+
+#include <iostream>
+#include <cmath>
+
+
+bool esPrimo(int num) {
+if (num <= 1) return false;
+for (int i = 2; i <= sqrt(num); ++i) {
+if (num % i == 0) return false;
+}
+return true;
+}
+
+
+int main() {
+int n, contPrimos = 0, candidato = 2;
+
+
+std::cout << "¿Cuántos números primos quieres mostrar? ";
+std::cin >> n;
+
+
+if (n <= 0) {
+std::cout << "El número debe ser positivo." << std::endl;
+return 1;
+}
+
+
+std::cout << "Los primeros " << n << " números primos son:" << std::endl;
+while (contPrimos < n) {
+if (esPrimo(candidato)) {
+std::cout << candidato << " ";
+contPrimos++;
+}
+candidato++;
+}
+std::cout << std::endl;
+
+
+return 0;
+}
