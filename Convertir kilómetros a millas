@@ -1,0 +1,28 @@
+#include <iostream>
+#include <iomanip>
+
+
+int main() {
+double km, millas;
+const double FACTOR_KM_A_MILLAS = 1.0 / 1.60934;
+
+
+std::cout << "Ingresa la distancia en kilómetros: ";
+std::cin >> km;
+
+
+if (km < 0) {
+std::cout << "Error: La distancia no puede ser negativa." << std::endl;
+return 1;
+}
+
+
+millas = km * FACTOR_KM_A_MILLAS;
+
+
+std::cout << std::fixed << std::setprecision(4);
+std::cout << km << " kilómetros equivalen a " << millas << " millas." << std::endl;
+
+
+return 0;
+}
