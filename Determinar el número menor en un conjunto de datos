@@ -1,0 +1,44 @@
+#include <iostream>
+#include <limits> // Para std::numeric_limits
+
+
+// Función para encontrar el número menor en un array
+int encontrarMenor(int arr[], int tam) {
+if (tam <= 0) {
+return 0; // Caso de array vacío, aunque no se espera en este ejercicio
+}
+int menor = arr[0];
+for (int i = 1; i < tam; ++i) {
+if (arr[i] < menor) {
+menor = arr[i];
+}
+}
+return menor;
+}
+
+
+int main() {
+const int TAM = 5;
+int numeros[TAM];
+
+
+std::cout << "Ingresa " << TAM << " números enteros:" << std::endl;
+for (int i = 0; i < TAM; ++i) {
+std::cout << "Número " << i + 1 << ": ";
+std::cin >> numeros[i];
+// Validación de entrada
+while(std::cin.fail()) {
+std::cout << "Entrada inválida. Por favor, ingresa un número entero: ";
+std::cin.clear();
+std::cin.ignore(std::numeric_limits<std::streamsize>::max(), '\n');
+std::cin >> numeros[i];
+}
+}
+
+
+int menor = encontrarMenor(numeros, TAM);
+std::cout << "El número menor en el conjunto es: " << menor << std::endl;
+
+
+return 0;
+}
