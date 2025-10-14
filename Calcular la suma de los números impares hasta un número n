@@ -1,0 +1,27 @@
+ #include <iostream>
+
+
+int main() {
+int n, suma = 0;
+
+
+std::cout << "Ingresa un número entero positivo n: ";
+std::cin >> n;
+
+
+if (n < 1) {
+std::cout << "No hay números impares para sumar hasta " << n << std::endl;
+return 0;
+}
+
+
+for (int i = 1; i <= n; i += 2) {
+suma += i;
+}
+
+
+std::cout << "La suma de los números impares hasta " << n << " es: " << suma << std::endl;
+
+
+return 0;
+}
