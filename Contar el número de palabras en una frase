@@ -1,0 +1,29 @@
+#include <iostream>
+#include <string>
+#include <cctype> // Para isspace
+
+
+int main() {
+std::string frase;
+int conteoPalabras = 0;
+bool dentroDePalabra = false;
+// 1. Pedir al usuario que ingrese una frase
+std::cout << "Ingresa una frase: ";
+std::getline(std::cin, frase);
+// 2. Inicializar un contador de palabras en 0 (ya está inicializado)
+// 4. Recorrer la cadena carácter por carácter
+for (char c : frase) {
+// 5. Si encontramos el inicio de una palabra
+if (!std::isspace(c) && !dentroDePalabra) {
+conteoPalabras++;
+dentroDePalabra = true;
+}
+// 6. Si encontramos un espacio
+else if (std::isspace(c)) {
+dentroDePalabra = false;
+}
+}
+// 7. Mostrar el contador final de palabras
+std::cout << "La frase contiene " << conteoPalabras << " palabras." << std::endl;
+return 0;
+}
