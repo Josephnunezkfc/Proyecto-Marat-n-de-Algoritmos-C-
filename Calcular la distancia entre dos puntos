@@ -1,0 +1,24 @@
+#include <iostream>
+#include <cmath> // Para sqrt
+#include <iomanip> // Para setprecision y fixed
+
+
+int main() {
+double x1, y1, x2, y2, diff_x, diff_y, distancia;
+// 1. Pedir al usuario que ingrese las coordenadas del primer punto
+std::cout << "Ingresa las coordenadas del primer punto (x1 y1): ";
+std::cin >> x1 >> y1;
+// 2. Pedir al usuario que ingrese las coordenadas del segundo punto
+std::cout << "Ingresa las coordenadas del segundo punto (x2 y2): ";
+std::cin >> x2 >> y2;
+// 3. Calcular la diferencia en el eje x
+diff_x = x2 - x1;
+// 4. Calcular la diferencia en el eje y
+diff_y = y2 - y1;
+// 5. Calcular la distancia
+distancia = sqrt(diff_x * diff_x + diff_y * diff_y);
+// 6. Mostrar la distancia con dos decimales
+std::cout << std::fixed << std::setprecision(2);
+std::cout << "La distancia entre los puntos es: " << distancia << std::endl;
+return 0;
+}
