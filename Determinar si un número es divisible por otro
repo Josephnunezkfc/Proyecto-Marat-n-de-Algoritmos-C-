@@ -1,0 +1,26 @@
+#include <iostream>
+
+
+int main() {
+int dividendo, divisor, resto;
+// 1. Pedir al usuario que ingrese el dividendo
+std::cout << "Ingresa el dividendo: ";
+std::cin >> dividendo;
+// 2. Pedir al usuario que ingrese el divisor
+std::cout << "Ingresa el divisor: ";
+std::cin >> divisor;
+// 3. Validar que el divisor no sea cero
+if (divisor == 0) {
+std::cout << "Error: No se puede dividir por cero." << std::endl;
+return 1; // Salir del programa con error
+}
+// 4. Calcular el resto de la división
+resto = dividendo % divisor;
+// 5. Verificar si es divisible
+if (resto == 0) {
+std::cout << dividendo << " es divisible por " << divisor << "." << std::endl;
+} else {
+std::cout << dividendo << " no es divisible por " << divisor << "." << std::endl;
+}
+return 0;
+}
