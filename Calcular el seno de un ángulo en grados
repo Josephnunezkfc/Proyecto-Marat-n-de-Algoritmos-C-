@@ -1,0 +1,20 @@
+#include <iostream>
+#include <cmath> // Para sin() y M_PI
+#include <iomanip> // Para setprecision y fixed
+
+
+int main() {
+double anguloGrados, anguloRadianes, resultado;
+// 1. Definir una constante para PI (usamos M_PI de cmath)
+// 2. Pedir al usuario que ingrese un ángulo en grados
+std::cout << "Ingresa un ángulo en grados: ";
+std::cin >> anguloGrados;
+// 3. Convertir el ángulo de grados a radianes
+anguloRadianes = anguloGrados * (M_PI / 180.0);
+// 4. Calcular el seno del ángulo en radianes
+resultado = sin(anguloRadianes);
+// 5. Mostrar el resultado con 4 decimales
+std::cout << std::fixed << std::setprecision(4);
+std::cout << "El seno de " << anguloGrados << " grados es: " << resultado << std::endl;
+return 0;
+}
