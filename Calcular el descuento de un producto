@@ -1,0 +1,26 @@
+#include <iostream>
+#include <iomanip> // Para setprecision y fixed
+
+
+int main() {
+double precio_original, porcentaje_descuento, descuento, precio_final;
+// 1. Pedir al usuario que ingrese el precio original
+std::cout << "Ingresa el precio original del producto: ";
+std::cin >> precio_original;
+// 2. Pedir al usuario que ingrese el porcentaje de descuento
+std::cout << "Ingresa el porcentaje de descuento: ";
+std::cin >> porcentaje_descuento;
+// 3. Validar que el precio y el porcentaje sean positivos
+if (precio_original <= 0 || porcentaje_descuento < 0) {
+std::cout << "Error: El precio debe ser positivo y el porcentaje no puede ser negativo." << std::endl;
+return 1; // Salir del programa con error
+}
+// 4. Calcular el monto del descuento
+descuento = precio_original * (porcentaje_descuento / 100.0);
+// 5. Calcular el precio final
+precio_final = precio_original - descuento;
+// 6. Mostrar el precio final con dos decimales
+std::cout << std::fixed << std::setprecision(2);
+std::cout << "El precio final después del descuento es: $" << precio_final << std::endl;
+return 0;
+}
