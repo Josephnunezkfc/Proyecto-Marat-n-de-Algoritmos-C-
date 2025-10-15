@@ -1,0 +1,36 @@
+#include <iostream>
+
+
+// Función para calcular el factorial de un número
+long long factorial(int num) {
+long long resultado = 1;
+for (int i = 1; i <= num; ++i) {
+resultado *= i;
+}
+return resultado;
+}
+
+
+int main() {
+int n, k;
+// 1. Pedir al usuario que ingrese el valor de n
+std::cout << "Ingresa el valor de n: ";
+std::cin >> n;
+// 2. Pedir al usuario que ingrese el valor de k
+std::cout << "Ingresa el valor de k: ";
+std::cin >> k;
+// 3. Validar que n y k sean positivos y que k ≤ n
+if (n < 0 || k < 0 || k > n) {
+std::cout << "Error: n y k deben ser positivos y k debe ser menor o igual a n." << std::endl;
+return 1; // Salir del programa con error
+}
+// 4. Calcular el factorial de n, k y (n-k)
+long long factorial_n = factorial(n);
+long long factorial_k = factorial(k);
+long long factorial_nk = factorial(n - k);
+// 5. Aplicar la fórmula de combinaciones
+long long combinaciones = factorial_n / (factorial_k * factorial_nk);
+// 6. Mostrar el resultado
+std::cout << "El número de combinaciones de " << k << " elementos tomados de " << n << " es: " << combinaciones << std::endl;
+return 0;
+}
