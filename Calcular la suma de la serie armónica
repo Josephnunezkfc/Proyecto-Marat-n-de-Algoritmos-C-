@@ -1,0 +1,26 @@
+#include <iostream>
+#include <iomanip> // Para setprecision y fixed
+
+
+int main() {
+int n;
+double suma = 0.0;
+// 1. Pedir al usuario que ingrese un número entero positivo n
+std::cout << "Ingresa un número entero positivo n: ";
+std::cin >> n;
+// 2. Validar que n sea positivo
+if (n <= 0) {
+std::cout << "Error: n debe ser un número positivo." << std::endl;
+return 1; // Salir del programa con error
+}
+// 3. Inicializar una variable suma en 0.0 (ya está inicializada)
+// 4. Usar un bucle para sumar los términos de la serie
+for (int i = 1; i <= n; ++i) {
+// 5. Sumar el recíproco del iterador
+suma += 1.0 / i;
+}
+// 6. Mostrar el resultado con 4 decimales
+std::cout << std::fixed << std::setprecision(4);
+std::cout << "La suma de los primeros " << n << " términos de la serie armónica es: " << suma << std::endl;
+return 0;
+}
