@@ -1,0 +1,48 @@
+#include <iostream>
+#include <cmath> // Para pow
+#include <iomanip> // Para setprecision y fixed
+
+
+int main() {
+double lado1, lado2, lado3, hipotenusa, cateto1, cateto2;
+// 1. Pedir al usuario que ingrese las longitudes de los tres lados
+std::cout << "Ingresa las longitudes de los tres lados del triángulo: ";
+std::cin >> lado1 >> lado2 >> lado3;
+// 2. Validar que todos los lados sean positivos
+if (lado1 <= 0 || lado2 <= 0 || lado3 <= 0) {
+std::cout << "Error: Todos los lados deben ser valores positivos." << std::endl;
+return 1; // Salir del programa con error
+}
+// 3. Determinar cuál es el lado más largo (posible hipotenusa)
+if (lado1 >= lado2 && lado1 >= lado3) {
+hipotenusa = lado1;
+cateto1 = lado2;
+cateto2 = lado3;
+} else if (lado2 >= lado1 && lado2 >= lado3) {
+hipotenusa = lado2;
+cateto1 = lado1;
+cateto2 = lado3;
+} else {
+hipotenusa = lado3;
+cateto1 = lado1;
+cateto2 = lado2;
+}
+// 4. Verificar si los lados forman un triángulo válido
+if (cateto1 + cateto2 <= hipotenusa) {
+std::cout << "Los lados ingresados no forman un triángulo válido." << std::endl;
+return 1; // Salir del programa con error
+}
+// 5. Aplicar el teorema de Pitágoras
+// Usamos una pequeña tolerancia para comparar números de punto flotante
+const double tolerancia = 0.0001;
+double suma_catetos = pow(cateto1, 2) + pow(cateto2, 2);
+double cuadrado_hipotenusa = pow(hipotenusa, 2);
+// 6. Mostrar el resultado
+std::cout << std::fixed << std::setprecision(4);
+if (fabs(suma_catetos - cuadrado_hipotenusa) < tolerancia) {
+std::cout << "El triángulo es rectángulo." << std::endl;
+} else {
+std::cout << "El triángulo no es rectángulo." << std::endl;
+}
+return 0;
+}
