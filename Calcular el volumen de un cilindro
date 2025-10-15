@@ -1,0 +1,27 @@
+#include <iostream>
+#include <iomanip> // Para setprecision y fixed
+
+
+int main() {
+double radio, altura, area_base, volumen;
+const double PI = 3.141592653589793;
+// 1. Pedir al usuario que ingrese el radio
+std::cout << "Ingresa el radio del cilindro: ";
+std::cin >> radio;
+// 2. Pedir al usuario que ingrese la altura
+std::cout << "Ingresa la altura del cilindro: ";
+std::cin >> altura;
+// 3. Validar que el radio y la altura sean positivos
+if (radio <= 0 || altura <= 0) {
+std::cout << "Error: El radio y la altura deben ser valores positivos." << std::endl;
+return 1; // Salir del programa con error
+}
+// 4. Calcular el área de la base
+area_base = PI * radio * radio;
+// 5. Calcular el volumen
+volumen = area_base * altura;
+// 6. Mostrar el resultado con dos decimales
+std::cout << std::fixed << std::setprecision(2);
+std::cout << "El volumen del cilindro es: " << volumen << std::endl;
+return 0;
+}
