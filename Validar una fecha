@@ -1,0 +1,50 @@
+#include <iostream>
+
+
+// Función para verificar si un año es bisiesto
+bool esBisiesto(int anio) {
+return (anio % 4 == 0 && anio % 100 != 0) || (anio % 400 == 0);
+}
+
+
+int main() {
+int dia, mes, anio;
+// 1. Pedir al usuario que ingrese el día, el mes y el año
+std::cout << "Ingresa el día: ";
+std::cin >> dia;
+std::cout << "Ingresa el mes: ";
+std::cin >> mes;
+std::cout << "Ingresa el año: ";
+std::cin >> anio;
+bool fechaValida = true;
+// 2. Validar que el mes esté entre 1 y 12
+if (mes < 1 || mes > 12) {
+fechaValida = false;
+} else {
+int maxDias;
+// 3. Determinar el número máximo de días para el mes
+if (mes == 4 || mes == 6 || mes == 9 || mes == 11) {
+maxDias = 30;
+} else if (mes == 2) {
+// 4. Verificar si el año es bisiesto para febrero
+if (esBisiesto(anio)) {
+maxDias = 29;
+} else {
+maxDias = 28;
+}
+} else {
+maxDias = 31;
+}
+// 5. Validar que el día esté en el rango correcto
+if (dia < 1 || dia > maxDias) {
+fechaValida = false;
+}
+}
+// 6. Mostrar el resultado
+if (fechaValida) {
+std::cout << "La fecha " << dia << "/" << mes << "/" << anio << " es válida." << std::endl;
+} else {
+std::cout << "La fecha " << dia << "/" << mes << "/" << anio << " es inválida." << std::endl;
+}
+return 0;
+}
