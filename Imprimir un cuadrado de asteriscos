@@ -1,0 +1,25 @@
+#include <iostream>
+
+
+int main() {
+int n;
+// 1. Pedir al usuario que ingrese el tamaño del lado del cuadrado
+std::cout << "Ingresa el tamaño del lado del cuadrado: ";
+std::cin >> n;
+// 2. Validar que n sea positivo
+if (n <= 0) {
+std::cout << "Error: El tamaño debe ser un número positivo." << std::endl;
+return 1; // Salir del programa con error
+}
+// 3. Bucle externo para controlar las filas
+for (int i = 1; i <= n; ++i) {
+// 4. Bucle interno para controlar las columnas
+for (int j = 1; j <= n; ++j) {
+// 5. Imprimir un asterisco
+std::cout << "*";
+}
+// 6. Imprimir salto de línea
+std::cout << std::endl;
+}
+return 0;
+}
