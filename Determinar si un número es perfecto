@@ -1,0 +1,32 @@
+#include <iostream>
+
+
+int main() {
+int numero;
+int sumaDivisores = 0;
+// 1. Pedir al usuario que ingrese un número entero positivo
+std::cout << "Ingresa un número entero positivo: ";
+std::cin >> numero;
+// 2. Validar que el número sea mayor que 1
+if (numero <= 1) {
+std::cout << "Por favor, ingrese un número mayor que 1." << std::endl;
+return 1;
+}
+// 3. Inicializar sumaDivisores en 0 (ya está inicializado)
+// 4. Bucle para encontrar los divisores propios
+for (int i = 1; i <= numero / 2; ++i) {
+// 5. Verificar si es un divisor
+if (numero % i == 0) {
+// 6. Sumarlo a la suma
+sumaDivisores += i;
+}
+}
+// 7. Comparar la suma con el número original
+if (sumaDivisores == numero) {
+// 8. Mostrar el resultado
+std::cout << "El número " << numero << " es perfecto." << std::endl;
+} else {
+std::cout << "El número " << numero << " no es perfecto." << std::endl;
+}
+return 0;
+}
