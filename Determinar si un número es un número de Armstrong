@@ -1,0 +1,43 @@
+#include <iostream>
+#include <cmath> // Para pow()
+
+
+int main() {
+int numero, original, temp;
+int nDigitos = 0;
+int suma = 0;
+// 1. Pedir al usuario un número entero positivo
+std::cout << "Ingresa un número entero positivo: ";
+std::cin >> numero;
+if (numero < 0) {
+std::cout << "Error: El número debe ser positivo." << std::endl;
+return 1;
+}
+original = numero;
+temp = numero;
+// 2. Contar el número de dígitos
+if (temp == 0) {
+nDigitos = 1;
+} else {
+while (temp > 0) {
+temp /= 10;
+nDigitos++;
+}
+}
+// 3. Guardar el número original (ya está guardado)
+// 5. Bucle para calcular la suma de potencias
+temp = numero;
+while (temp > 0) {
+int digito = temp % 10;
+suma += pow(digito, nDigitos);
+temp /= 10;
+}
+// 6. Comparar la suma con el número original
+if (suma == original) {
+// 7. Mostrar el resultado
+std::cout << "El número " << original << " es un número de Armstrong." << std::endl;
+} else {
+std::cout << "El número " << original << " no es un número de Armstrong." << std::endl;
+}
+return 0;
+}
