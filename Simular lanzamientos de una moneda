@@ -1,0 +1,35 @@
+#include <iostream>
+#include <cstdlib> // Para rand() y srand()
+#include <ctime> // Para time()
+
+
+int main() {
+int n;
+int contCaras = 0, contCruces = 0;
+// 1. Inicializar la semilla del generador de números aleatorios
+srand(time(0));
+// 2. Pedir al usuario el número de lanzamientos
+std::cout << "¿Cuántas veces quieres lanzar la moneda? ";
+std::cin >> n;
+// 3. Validar que n sea positivo
+if (n <= 0) {
+std::cout << "Error: El número de lanzamientos debe ser positivo." << std::endl;
+return 1;
+}
+// 5. Bucle para simular los lanzamientos
+for (int i = 0; i < n; ++i) {
+// 6. Generar un número aleatorio entre 0 y 1
+int resultado = rand() % 2;
+// 7. Incrementar el contador correspondiente
+if (resultado == 0) {
+contCaras++;
+} else {
+contCruces++;
+}
+}
+// 8. Mostrar los resultados
+std::cout << "Resultados después de " << n << " lanzamientos:" << std::endl;
+std::cout << "Caras: " << contCaras << std::endl;
+std::cout << "Cruces: " << contCruces << std::endl;
+return 0;
+}
