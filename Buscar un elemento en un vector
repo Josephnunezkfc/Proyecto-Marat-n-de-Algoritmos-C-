@@ -1,0 +1,44 @@
+#include <iostream>
+#include <vector>
+
+
+// Función para buscar un elemento en un vector
+bool buscarEnVector(const std::vector<int>& vec, int objetivo) {
+for (int elemento : vec) {
+if (elemento == objetivo) {
+return true; // Se encontró el elemento
+}
+}
+return false; // No se encontró el elemento
+}
+
+
+int main() {
+int n, objetivo;
+// 1. Pedir al usuario el tamaño del vector
+std::cout << "Ingresa el tamaño del vector: ";
+std::cin >> n;
+if (n <= 0) {
+std::cout << "Error: El tamaño debe ser positivo." << std::endl;
+return 1;
+}
+// 2. Crear un std::vector
+std::vector<int> numeros(n);
+// 3. Pedir al usuario que llene el vector
+std::cout << "Ingresa " << n << " números:" << std::endl;
+for (int i = 0; i < n; ++i) {
+std::cin >> numeros[i];
+}
+// 4. Pedir al usuario el número a buscar
+std::cout << "Ingresa el número a buscar: ";
+std::cin >> objetivo;
+// 6. Llamar a la función de búsqueda
+bool encontrado = buscarEnVector(numeros, objetivo);
+// 7. Mostrar el resultado
+if (encontrado) {
+std::cout << "El número " << objetivo << " fue encontrado en el vector." << std::endl;
+} else {
+std::cout << "El número " << objetivo << " NO fue encontrado en el vector." << std::endl;
+}
+return 0;
+}
