@@ -1,0 +1,31 @@
+#include <iostream>
+#include <string>
+#include <cctype> // Para toupper, tolower, isspace
+
+
+int main() {
+std::string frase, resultado;
+bool esNuevaPalabra = false;
+// 1. Pedir al usuario que ingrese una frase
+std::cout << "Ingresa una frase para convertir a camelCase: ";
+std::getline(std::cin, frase);
+// 4. Recorrer la frase original carácter por carácter
+for (size_t i = 0; i < frase.length(); ++i) {
+char c = frase[i];
+// 5. Si el carácter es un espacio
+if (std::isspace(c)) {
+esNuevaPalabra = true;
+} else {
+// 6. Si no es un espacio
+if (esNuevaPalabra && !resultado.empty()) {
+resultado += std::toupper(c);
+} else {
+resultado += std::tolower(c);
+}
+esNuevaPalabra = false;
+}
+}
+// 7. Mostrar la cadena resultante
+std::cout << "Resultado en camelCase: " << resultado << std::endl;
+return 0;
+}
