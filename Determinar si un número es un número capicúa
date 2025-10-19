@@ -1,0 +1,34 @@
+#include <iostream>
+#include <string>
+#include <algorithm> // Para std::reverse
+
+int main() {
+    long long numero;
+    
+    // 1. Pedir al usuario un número entero positivo
+    std::cout << "Ingresa un número entero positivo: ";
+    std::cin >> numero;
+    
+    // 2. Validar que el número sea positivo
+    if (numero < 0) {
+        std::cout << "Error: El número debe ser positivo." << std::endl;
+        return 1;
+    }
+    
+    // 3. Convertir el número a una cadena
+    std::string s = std::to_string(numero);
+    
+    // 4. Crear una copia inversa
+    std::string s_inversa = s;
+    std::reverse(s_inversa.begin(), s_inversa.end());
+    
+    // 5. Comparar la cadena original con su inversa
+    if (s == s_inversa) {
+        // 6. Mostrar el resultado
+        std::cout << "El número " << numero << " es capicúa." << std::endl;
+    } else {
+        std::cout << "El número " << numero << " no es capicúa." << std::endl;
+    }
+    
+    return 0;
+}
