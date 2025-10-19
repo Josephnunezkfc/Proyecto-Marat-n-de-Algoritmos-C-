@@ -1,0 +1,31 @@
+
+
+#include <iostream>
+#include <cmath> // Para tan() y M_PI
+#include <iomanip> // Para setprecision y fixed
+
+
+int main() {
+int n;
+double L;
+// 1. Pedir al usuario el número de lados y la longitud del lado
+std::cout << "Ingresa el número de lados (n >= 3): ";
+std:: cin >> n;
+std::cout << "Ingresa la longitud del lado: ";
+std:: cin >> L;
+// 2. Validar entradas
+if (n < 3 || L <= 0) {
+std::cout << "Error: n debe ser >= 3 y L debe ser positivo." << std::endl;
+return 1;
+}
+// 3. Calcular el perímetro
+double perimetro = n * L;
+// 4. Calcular el apotema
+double apotema = L / (2 * tan(M_PI / n);
+// 5. Calcular el área
+double area = (perimetro * apotema) / 2;
+// 6. Mostrar el resultado
+std:: cout << std::fixed << std::setprecision(2);
+std::cout << "El área del polígono regular es: " << area << std::endl;
+return 0;
+}
