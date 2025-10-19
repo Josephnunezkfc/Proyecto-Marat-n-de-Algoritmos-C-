@@ -1,0 +1,28 @@
+#include <iostream>
+#include <vector>
+#include <algorithm> // Para std::sort
+
+
+int main() {
+int n, k;
+std::cout << "Ingresa el tamaño del array: ";
+std::cin >> n;
+if (n <= 0) return 1;
+std::vector<int> numeros(n);
+std::cout << "Ingresa los " << n << " elementos:" << std::endl;
+for (int i = 0; i < n; ++i) {
+std::cin >> numeros[i];
+}
+std::cout << "Ingresa el valor de k (1-ésimo más pequeño): ";
+std::cin >> k;
+// 2. Validar k
+if (k < 1 || k > n) {
+std::cout << "Error: k debe estar entre 1 y " << n << "." << std::endl;
+return 1;
+}
+// 3. Ordenar el array
+std::sort(numeros.begin(), numeros.end());
+// 4. y 5. El k-ésimo más pequeño está en el índice k-1
+std::cout << "El " << k << "-ésimo elemento más pequeño es: " << numeros[k - 1] << std::endl;
+return 0;
+}
