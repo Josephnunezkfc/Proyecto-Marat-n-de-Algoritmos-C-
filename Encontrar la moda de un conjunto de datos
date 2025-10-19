@@ -1,0 +1,43 @@
+#include <iostream>
+#include <vector>
+#include <algorithm> // Para std::sort
+
+
+int main() {
+int n;
+// 1. Pedir al usuario el tamaño del conjunto y sus elementos
+std::cout << "¿Cuántos números ingresarás? ";
+std::cin >> n;
+if (n <= 0) return 1;
+std::vector<int> datos(n);
+std::cout << "Ingresa los " << n << " números:" << std::endl;
+for (int i = 0; i < n; ++i) {
+std::cin >> datos[i];
+}
+// 3. Ordenar el vector
+std::sort(datos.begin(), datos.end());
+int moda = datos[0];
+int maxFrecuencia = 1;
+int frecuenciaActual = 1;
+// 5. Recorrer el vector para encontrar la moda
+for (int i = 1; i < n; ++i) {
+if (datos[i] == datos[i - 1]) {
+frecuenciaActual++;
+} else {
+// 7. Comparar con la frecuencia máxima
+if (frecuenciaActual > maxFrecuencia) {
+maxFrecuencia = frecuenciaActual;
+moda = datos[i - 1];
+}
+frecuenciaActual = 1; // Reiniciar contador para el nuevo número
+}
+}
+// Comprobación final para el último grupo de números
+if (frecuenciaActual > maxFrecuencia) {
+maxFrecuencia = frecuenciaActual;
+moda = datos.back();
+}
+// 9. Mostrar el resultado
+std::cout << "La moda es " << moda << " que aparece " << maxFrecuencia << " veces." << std::endl;
+return 0;
+}
