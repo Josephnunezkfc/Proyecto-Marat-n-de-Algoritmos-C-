@@ -1,0 +1,29 @@
+#include <iostream>
+
+
+int main() {
+long long numero;
+// 1. Pedir al usuario un número entero positivo
+std::cout << "Ingresa un número entero positivo para generar su secuencia de Collatz: ";
+std::cin >> numero;
+// 2. Validar que el número sea positivo
+if (numero <= 0) {
+std::cout << "Error: El número debe ser positivo." << std::endl;
+return 1;
+}
+std::cout << "Secuencia de Collatz para " << numero << ":" << std::endl;
+// 3. Bucle para generar la secuencia
+while (numero != 1) {
+// 4. Imprimir el número actual
+std::cout << numero << " -> ";
+// Aplicar la regla de Collatz
+if (numero % 2 == 0) {
+numero /= 2;
+} else {
+numero = 3 * numero + 1;
+}
+}
+// 5. Imprimir el 1 final
+std::cout << 1 << std::endl;
+return 0;
+}
