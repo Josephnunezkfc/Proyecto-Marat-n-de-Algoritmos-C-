@@ -1,0 +1,45 @@
+
+
+#include <iostream>
+#include <vector>
+
+
+long long coeficienteBinomial(int n, int k, std::vector<std::vector<long long>>& memo) {
+// Casos base
+if (k == 0 || k == n) {
+return 1;
+}
+// Si ya está calculado, devolverlo
+if (memo[n][k] != -1) {
+return memo[n][k];
+}
+// Calcular, guardar y devolver
+memo[n][k] = coeficienteBinomial(n - 1, k - 1, memo) + coeficienteBinomial(n - 1, k, memo);
+return memo[n][k];
+}
+
+
+int main() {
+int n, k;
+std::cout << "Ingresa el valor de n: ";
+std::cin >> n;
+std::cout << "Ingresa el valor de k: ";
+std::cin >> k;
+
+
+if (n < 0 || k < 0 || k > n) {
+std::cout << "Error: n y k deben ser no negativos y k <= n." << std::endl;
+return 1;
+}
+
+
+// Inicializar tabla de memoización con -1
+std::vector<std::vector<long long>> memo(n + 1, std::vector<long long>(k + 1, -1));
+
+
+long long resultado = coeficienteBinomial(n, k, memo);
+std::cout << "El coeficiente binomial C(" << n << ", " << k << ") es: " << resultado << std::endl;
+
+
+return 0;
+}
