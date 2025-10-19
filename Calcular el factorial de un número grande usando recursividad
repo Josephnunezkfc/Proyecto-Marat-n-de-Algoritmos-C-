@@ -1,0 +1,25 @@
+#include <iostream>
+#include <vector>
+
+
+// Función recursiva para calcular el factorial de un número grande
+long long factorialGrande(int n) {
+if (n < 0) return 1;
+if (n == 0) return 1;
+return n * factorialGrande(n - 1);
+}
+
+
+int main() {
+int n;
+std::cout << "Ingresa un número entero positivo: ";
+std:: cin >> n;
+if (n < 0) {
+std:: cout << "El número debe ser positivo." << std:: endl;
+return 1;
+}
+// Llamar a la función recursiva
+long long resultado = factorialGrande(n);
+std:: cout << "El factorial de " << n << " es: " << resultado << std::endl;
+return 0;
+}
