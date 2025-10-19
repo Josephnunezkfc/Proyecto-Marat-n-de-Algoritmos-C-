@@ -1,0 +1,25 @@
+#include <iostream>
+
+
+int main() {
+int n;
+long long factorial = 1;
+int i = 1; // Variable de control para el bucle while
+// 1. Pedir al usuario un número entero no negativo
+std::cout << "Ingresa un número entero no negativo: ";
+std::cin >> n;
+// 2. Validar que el número sea no negativo
+if (n < 0) {
+std::cout << "Error: El número debe ser no negativo." << std::endl;
+return 1;
+}
+// 5. Bucle while para calcular el factorial
+while (i <= n) {
+// 6. Multiplicar e incrementar
+factorial *= i;
+i++;
+}
+// 7. Mostrar el resultado
+std::cout << "El factorial de " << n << " es: " << factorial << std::endl;
+return 0;
+}
