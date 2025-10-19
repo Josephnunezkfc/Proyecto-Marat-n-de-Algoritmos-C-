@@ -1,0 +1,20 @@
+#include <iostream>
+
+
+int main() {
+double ax, ay, az, bx, by, bz;
+double cx, cy, cz;
+// 1. Pedir al usuario las coordenadas del primer vector
+std::cout << "Ingresa las coordenadas del primer vector (ax ay az): ";
+std::cin >> ax >> ay >> az;
+// 2. Pedir al usuario las coordenadas del segundo vector
+std::cout << "Ingresa las coordenadas del segundo vector (bx by bz): ";
+std::cin >> bx >> by >> bz;
+// 3. Aplicar las fórmulas del producto cruz
+cx = ay * bz - az * by;
+cy = az * bx - ax * bz;
+cz = ax * by - ay * bx;
+// 4. Mostrar el vector resultante
+std::cout << "El producto cruz es: (" << cx << ", " << cy << ", " << cz << ")" << std::endl;
+return 0;
+}
