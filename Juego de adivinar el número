@@ -1,0 +1,37 @@
+#include <iostream>
+#include <cstdlib> // Para rand() y srand()
+#include <ctime> // Para time()
+
+
+int main() {
+// 1. Inicializar la semilla
+srand(time(0));
+char jugarDeNuevo;
+do {
+// 2. Generar el número secreto
+int numeroSecreto = rand() % 100 + 1;
+int intento;
+int conteoIntentos = 0;
+std::cout << "He generado un número entre 1 y 100. ¡Adivínalo!" << std::endl;
+// 4. Bucle del juego
+do {
+// 5. Pedir intento
+std::cout << "Ingresa tu intento: ";
+std::cin >> intento;
+conteoIntentos++;
+// Comparar y dar pista
+if (intento < numeroSecreto) {
+std::cout << "Muy bajo. Intenta de nuevo." << std::endl;
+} else if (intento > numeroSecreto) {
+std::cout << "Muy alto. Intenta de nuevo." << std::endl;
+} else {
+std::cout << "¡Correcto! Adivinaste el número en " << conteoIntentos << " intentos." << std::endl;
+}
+} while (intento != numeroSecreto);
+// 6. Preguntar si quiere jugar de nuevo
+std::cout << "¿Quieres jugar de nuevo? (s/n): ";
+std::cin >> jugarDeNuevo;
+} while (jugarDeNuevo == 's' || jugarDeNuevo == 'S');
+std::cout << "¡Gracias por jugar!" << std::endl;
+return 0;
+}
