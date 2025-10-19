@@ -1,0 +1,37 @@
+#include <iostream>
+#include <vector>
+#include <limits> // Para std::numeric_limits
+
+
+int main() {
+int n;
+// 1. Pedir al usuario el tamaño del array y sus elementos
+std::cout << "Ingresa el tamaño del vector (mínimo 2): ";
+std::cin >> n;
+if (n < 2) {
+std::cout << "Error: Se necesitan al menos 2 elementos." << std::endl;
+return 1;
+}
+std::vector<int> numeros(n);
+std::cout << "Ingresa los " << n << " elementos del vector:" << std::endl;
+for (int i = 0; i < n; ++i) {
+std::cin >> numeros[i];
+}
+// 2. Inicializar los dos mayores con el valor más bajo posible
+int mayor = std::numeric_limits<int>::min();
+int segundoMayor = std::numeric_limits<int>::min();
+// 3. Recorrer el array una sola vez
+for (int x : numeros) {
+// 4. Comparar y actualizar
+if (x > mayor) {
+segundoMayor = mayor;
+mayor = x;
+} else if (x > segundoMayor) {
+segundoMayor = x;
+}
+}
+// 5. Mostrar los resultados
+std::cout << "El número más grande es: " << mayor << std::endl;
+std::cout << "El segundo número más grande es: " << segundoMayor << std::endl;
+return 0;
+}
