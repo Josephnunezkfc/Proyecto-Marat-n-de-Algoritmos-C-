@@ -1,0 +1,32 @@
+#include <iostream>
+#include <cstdlib> // Para abs()
+
+
+int main() {
+long long numero;
+// 1. Pedir al usuario un número entero
+std::cout << "Ingresa un número entero: ";
+std::cin >> numero;
+// 2. Si el número es negativo, convertirlo a positivo
+numero = abs(numero);
+// Manejar el caso especial del 0
+if (numero == 0) {
+std::cout << "El número 0 no es un número de la suerte." << std::endl;
+return 0;
+}
+// 3. Bucle para buscar el dígito 7
+while (numero > 0) {
+// 4. Extraer el último dígito
+int digito = numero % 10;
+// Si encontramos un 7
+if (digito == 7) {
+std::cout << "¡El número es un número de la suerte!" << std::endl;
+return 0; // Terminar el programa
+}
+// Eliminar el último dígito
+numero /= 10;
+}
+// 5. Si el bucle termina, no se encontró un 7
+std::cout << "El número no es un número de la suerte." << std::endl;
+return 0;
+}
