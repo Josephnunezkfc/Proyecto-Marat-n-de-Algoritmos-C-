@@ -1,0 +1,24 @@
+#include <iostream>
+
+
+int main() {
+int n;
+// 1. Pedir al usuario el número de filas
+std::cout << "Ingresa el número de filas para el zigzag (debe ser impar): ";
+std::cin >> n;
+// 2. Validar que n sea positivo e impar
+if (n <= 0 || n % 2 == 0) {
+std::cout << "Error: El número debe ser positivo e impar." << std::endl;
+return 1;
+}
+// 3. Bucle para imprimir el patrón de zigzag
+for (int i = 1; i <= n; ++i) {
+// 4. Verificar si la fila es par o impar
+if (i % 2 != 0) { // Fila impar
+std::cout << "***" << std::endl;
+} else { // Fila par
+std::cout << "*" << std::endl;
+}
+}
+return 0;
+}
