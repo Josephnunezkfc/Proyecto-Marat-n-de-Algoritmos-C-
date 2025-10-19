@@ -1,0 +1,27 @@
+
+
+#include <iostream>
+
+
+int main() {
+int numero;
+long long producto = 1;
+// 1. Pedir al usuario un número entero positivo.
+std:: cout << "Ingresa un número entero positivo: ";
+std:: cin >> numero;
+// 2. Validar que el número sea positivo.
+if (numero <= 0) {
+std:: cout << "Error: El número debe ser positivo." << std:: endl;
+return 1;
+}
+// 3. Inicializar producto en 1.
+// 4. Bucleo para calcular el producto de los dígitos.
+while (numero > 0) {
+int digito = numero % 10;
+producto *= digito;
+numero /= 10;
+}
+// 5. Mostrar el resultado final de producto.
+std:: cout << "El producto de los dígitos es: " << producto << std:: endl;
+return 0;
+}
