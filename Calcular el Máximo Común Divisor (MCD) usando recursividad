@@ -1,0 +1,31 @@
+#include <iostream>
+
+
+// Función recursiva para calcular el MCD usando el algoritmo de Euclides
+int mcdRecursivo(int a, int b) {
+// 2. Caso base
+if (b == 0) {
+return a;
+}
+// 3. Paso recursivo
+return mcdRecursivo(b, a % b);
+}
+
+
+int main() {
+int num1, num2;
+// 4. Pedir al usuario los dos números
+std::cout << "Ingresa el primer número: ";
+std::cin >> num1;
+std::cout << "Ingresa el segundo número: ";
+std::cin >> num2;
+// 5. Validar que los números sean positivos
+if (num1 <= 0 || num2 <= 0) {
+std::cout << "Error: Ambos números deben ser positivos." << std::endl;
+return 1;
+}
+// 6. Llamar a la función recursiva y mostrar el resultado
+int resultado = mcdRecursivo(num1, num2);
+std::cout << "El Máximo Común Divisor de " << num1 << " y " << num2 << " es: " << resultado << std::endl;
+return 0;
+}
