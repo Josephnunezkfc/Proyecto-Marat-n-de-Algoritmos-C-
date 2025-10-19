@@ -1,0 +1,44 @@
+#include <iostream>
+#include <string>
+#include <vector>
+#include <algorithm> // Para std::sort
+#include <cctype> // Para tolower y isalpha
+
+
+// Función para limpiar una cadena (quitar espacios y puntuación, y pasar a minúsculas)
+std::string limpiarCadena(const std::string& str) {
+std::string limpia;
+for (char c : str) {
+if (std::isalpha(c)) {
+limpia += std::tolower(c);
+}
+}
+return limpia;
+}
+
+
+int main() {
+std::string cadena1, cadena2;
+// 1. Pedir al usuario dos cadenas de texto
+std::cout << "Ingresa la primera cadena: ";
+std::getline(std::cin, cadena1);
+std::cout << "Ingresa la segunda cadena: ";
+std::getline(std::cin, cadena2);
+// 2. y 3. Limpiar ambas cadenas
+std::string s1 = limpiarCadena(cadena1);
+std::string s2 = limpiarCadena(cadena2);
+// 4. Comparar longitudes
+if (s1.length() != s2.length()) {
+std::cout << "No son anagramas." << std::endl;
+return 0;
+}
+// Método alternativo y más simple: ordenar y comparar
+std::sort(s1.begin(), s1.end());
+std::sort(s2.begin(), s2.end());
+if (s1 == s2) {
+std::cout << "Las cadenas son anagramas." << std::endl;
+} else {
+std::cout << "Las cadenas no son anagramas." << std::endl;
+}
+return 0;
+}
