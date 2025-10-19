@@ -1,0 +1,34 @@
+#include <iostream>
+
+
+int main() {
+long long L;
+// 1. Pedir al usuario el límite superior
+std::cout << "Ingresa el límite superior para la secuencia de Fibonacci: ";
+std::cin >> L;
+// 2. Validar que L sea no negativo
+if (L < 0) {
+std::cout << "Error: El límite debe ser un número no negativo." << std::endl;
+return 1;
+}
+// 3. Inicializar los dos primeros términos
+long long a = 0;
+long long b = 1;
+std::cout << "Secuencia de Fibonacci hasta " << L << ":" << std::endl;
+// 4. Imprimir el primer término
+if (L >= 0) {
+std::cout << a << " ";
+}
+// 5. Bucle para generar e imprimir el resto de la secuencia
+// 6. El bucle continúa mientras el siguiente término no exceda el límite
+while (b <= L) {
+std::cout << b << " ";
+// Calcular el siguiente término
+long long siguiente = a + b;
+// Actualizar los valores para la siguiente iteración
+a = b;
+b = siguiente;
+}
+std::cout << std::endl;
+return 0;
+}
