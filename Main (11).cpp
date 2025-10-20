@@ -1,10 +1,29 @@
 #include <iostream>
+#include <map>
+#include <sstream>
+#include <string>
 using namespace std;
+
 int main() {
-    int a = 2, b = 3;
-    int *pa = &a, *pb = &b;
-    cout << "Valores iniciales: " << *pa << ", " << *pb << endl;
-    *pa += *pb;
-    cout << "Resultado: " << *pa << endl;
-    return 0;
+    string texto = "hola mundo hola programador mundo cplusplus";
+    map<string, int> frecuencia;
+    stringstream ss(texto);
+    string palabra;
+
+    while (ss >> palabra)
+        frecuencia[palabra]++;
+
+    for (auto& par : frecuencia)
+        cout << par.first << " -> " << par.second << endl;
 }
+
+
+
+
+
+
+
+
+
+
+
